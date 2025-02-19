@@ -32,3 +32,7 @@ VanillaTilt.init(document.querySelectorAll(".card"), {
     glare: true,
     "max-glare": 0.5
 });
+
+document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('nav-menu').classList.toggle('active');
+});

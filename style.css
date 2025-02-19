@@ -1,3 +1,8 @@
+:root{
+  --white: #fff;
+  --dark: #000;
+  --gray: #333;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -8,6 +13,7 @@ body {
     background: linear-gradient(45deg, #f3f3f3, #e1e1e1);
     animation: backgroundAnimation 10s infinite alternate;
 }
+
 
 @keyframes backgroundAnimation {
     0% { background: linear-gradient(45deg, #f3f3f3, #e1e1e1); }
@@ -27,7 +33,7 @@ header {
 }
 .container {
     width: 90%;
-    max-width: 1400px;
+    max-width: 2300px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -184,18 +190,25 @@ button:hover {
     padding: 200px 20%;
     background-color: #d1d1d1;
 }
-.content-about h2{
-  height: 50px;
-  font-size: 3em;
-  margin-top: 500px;
-}
 .content-about p{
   padding: 2rem;
   font-size: 20px;
 }
+.dark-mode .content-about{
+  background-color: var(--dark);
+}
+.dark-mode .content-about p{
+  color: var(--white);
+}
 .content-projects{
   padding: 40px 10%;
-  background-color: white;
+  background-color: #d1d1d1;
+}
+.content-projects h1, p{
+  color: var(--dark);
+}
+.dark-mode .content-projects{
+  background-color: var(--white);
 }
 .container-card{
     width: 100%;
@@ -243,16 +256,16 @@ button:hover {
   transition: .5s;
 }
 .container-card div.card1{
-  background-image: linear-gradient(45deg, #023535, #015958);
+  background-image: linear-gradient(45deg, #E3BB16, #333);
 }
 .container-card div.card2{
-  background-image: linear-gradient(45deg, #008F8C, #0CABA8);
+  background-image: linear-gradient(45deg, #333, #E3BB16);
 }
 .container-card div.card3{
-  background-image: linear-gradient(45deg, #0CABA8, #008F8C);
+  background-image: linear-gradient(45deg, #E3BB16, #333);
 }
 .container-card div.card4{
-  background-image: linear-gradient(45deg, #015958, #023535);
+  background-image: linear-gradient(45deg, #333, #E3BB16);
 }
 .content-contact{
     padding: 200px 20%;
@@ -265,47 +278,31 @@ footer {
     text-align: center;
 }
 .social-bar {
-    position: fixed;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 .social-icon {
     color: black;
     font-size: 1.5em;
     text-decoration: none;
     transition: color 0.3s;
+    padding: 3px;
+}
+.dark-mode .social-icon{
+  color: var(--white);
 }
 .social-icon:hover {
     color: #ffcc00;
-}
-.social-bar {
-    position: fixed;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-.social-icon {
-    color: black;
-    font-size: 1.5em;
-    text-decoration: none;
-    transition: color 0.3s;
-    padding: 10px;
 }
 .carousel-wrapper {
   width: 100%;
@@ -339,6 +336,9 @@ footer {
 .carousel-track i:hover {
   transform: scale(1.2);
 }
+.dark-mode .carousel-wrapper{
+  background-color: var(--white);
+}
 
 @keyframes scrollIcons {
   from {
@@ -346,5 +346,201 @@ footer {
   }
   to {
       transform: translateX(-50%);
+  }
+}
+
+
+/*dark e light mode*/
+
+.btn-theme{
+  margin: 0;
+  padding: 0;
+}
+#theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #ffcc00;
+  transition: transform 0.3s ease-in-out;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Tema Escuro */
+.dark-mode {
+  background: #1a1a1a;
+  color: #f3f3f3;
+}
+/* Cabeçalho */
+.dark-mode header {
+  background: #333;
+}  
+.dark-mode .pulsar{
+  color: var(--white);
+}
+.dark-mode .mais{
+  color: var(--white);
+}
+/* Seções principais */
+.dark-mode .content {
+  background: #222;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Seção Hero */
+.dark-mode .hero{
+  background: var(--white);
+  color: var(--dark);
+}
+.dark-mode .hero p{
+  color: var(--dark);
+}
+/* Botão no modo escuro */
+.dark-mode button {
+  background: #e6b800;
+  color: var(--white);
+}
+
+.dark-mode button:hover {
+  background: var(--dark);
+}
+
+/* Links no modo escuro */
+.dark-mode a {
+  color: #000000;
+}
+/* Footer */
+.dark-mode footer {
+  background: #222;
+  color: white;
+}
+/* Social Bar */
+.dark-mode .social-bar {
+  background: rgba(50, 50, 50, 0.9);
+}
+/* Ícone do tema no modo escuro */
+.dark-mode #theme-toggle {
+  color: #f3f3f3;
+}
+
+/*REPOSIVIDADE*/
+/* Garante que todos os elementos tenham um comportamento responsivo */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Responsividade do cabeçalho */
+@media (max-width: 768px) {
+  header {
+      height: auto;
+      padding: 10px;
+  }
+
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .logo {
+      font-size: 1.2em;
+      text-align: center;
+  }
+}
+
+/* Ajuste da seção hero */
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 2em;
+  }
+
+  .hero p {
+      font-size: 1em;
+  }
+
+  .hero button {
+      padding: 10px 20px;
+      font-size: 0.9em;
+  }
+}
+
+/* Ajuste das seções */
+@media (max-width: 768px) {
+  .content {
+      padding: 60px 10%;
+      text-align: center;
+  }
+}
+
+/* Botão Dark/Light responsivo */
+@media (max-width: 768px) {
+  #theme-toggle {
+      font-size: 1.5em;
+      top: 15px;
+      right: 15px;
+  }
+}
+
+/* Ajustando a barra lateral de redes sociais */
+@media (max-width: 768px) {
+  .social-bar {
+      flex-direction: row;
+      bottom: 10px;
+      top: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px;
+  }
+
+  .social-icon {
+      font-size: 1.2em;
+      margin: 0 10px;
+  }
+}
+
+/* Ajuste do rodapé */
+@media (max-width: 768px) {
+  footer {
+      padding: 15px;
+      font-size: 0.9em;
+  }
+}
+/* Layout de Projetos - Lado a lado no desktop, empilhado no mobile */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project {
+  width: 30%; /* Define largura para desktop */
+  background: white;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+/* Empilhar projetos no mobile */
+@media (max-width: 768px) {
+  .project {
+      width: 100%; /* Ocupa 100% da largura no mobile */
   }
 }
