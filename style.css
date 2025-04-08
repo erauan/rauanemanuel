@@ -518,14 +518,14 @@ footer {
   }
 }
 /* Layout de Projetos - Lado a lado no desktop, empilhado no mobile */
-.projects-container {
+.content-projects {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-.project {
+.projects {
   width: 30%; /* Define largura para desktop */
   background: white;
   padding: 15px;
@@ -534,13 +534,19 @@ footer {
   transition: transform 0.3s;
 }
 
-.project:hover {
+.projects:hover {
   transform: scale(1.05);
 }
+/* Layout de 2 colunas em telas médias e uma em telas pequenas */
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
 
-/* Empilhar projetos no mobile */
 @media (max-width: 768px) {
-  .project {
-      width: 100%; /* Ocupa 100% da largura no mobile */
+  .container-card {
+      grid-template-columns: 1fr;
   }
 }
