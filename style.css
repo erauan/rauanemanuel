@@ -198,7 +198,7 @@ button:hover {
     background: white; 
 }
 .content {
-    padding: 90px 15%;
+    padding: 90px 10%;
     background: white;
 }
 .content-about{
@@ -220,7 +220,7 @@ button:hover {
   color: var(--dark);
 }
 .content-projects{
-  padding: 40px 10%;
+  padding: 40% 0%;
   background-color: var(--gray-dark);
 }
 .content-projects h1{
