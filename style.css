@@ -2,6 +2,12 @@
   --white: #fff;
   --dark: #000;
   --gray: #333;
+  --blue-dark: #0f172a;
+  --gray-dark: #1e293b;
+  --white-text: #f1f5f9;
+  --light-blue: #38dbf8;
+  --blue-bottom: #3b82f6;
+  --brown: #F2CCB6;
 }
 
 body {
@@ -14,13 +20,16 @@ body {
     animation: backgroundAnimation 10s infinite alternate;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 @keyframes backgroundAnimation {
     0% { background: linear-gradient(45deg, #f3f3f3, #e1e1e1); }
     100% { background: linear-gradient(45deg, #e1e1e1, #d1d1d1); }
 }
 header {
-    background: rgb(255, 255, 255);
+    background:var(--blue-dark);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -41,6 +50,7 @@ header {
     align-items: center;
 }
 .pulsar {
+    color: var(--white-text);
     font-weight: bold;
     font-size: 1.5em;
 
@@ -69,17 +79,17 @@ nav ul {
     margin: 0;
 }
 nav a {
-    color: black;
+    color: var(--white-text);
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
     font-size: 1em;
 }
 nav a:hover {
-    color: #ffcc00;
+    color: var(--blue-bottom);
 }
 .hero {
-    background-color: #333;
+    background-color: var(--blue-dark);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -97,6 +107,7 @@ nav a:hover {
     margin-bottom: 50px;
 }
 h1 {
+    color: var(--white-text);
     font-size: 3.6rem;
     letter-spacing: 0.1em;
   }
@@ -104,7 +115,7 @@ h1 {
   h1 span {
     display: inline-block;
     font-size: 1.5em;
-    color: #ffcc00;
+    color: var(--white-text);
     animation: bounce 3s ease infinite;
   }
   
@@ -155,6 +166,9 @@ h1 {
   h1 span:nth-child(13) {
     animation-delay: 2.4s;
   }
+  h1 span:nth-child(14) {
+    animation-delay: 2.6s;
+  }
   
   @keyframes bounce {
     0% {
@@ -170,7 +184,7 @@ h1 {
     }
   }
 button {
-    background: #ffcc00;
+    background: var(--blue-bottom);
     border: none;
     padding: 15px 30px;
     cursor: pointer;
@@ -188,21 +202,25 @@ button:hover {
 }
 .content-about{
     padding: 200px 20%;
-    background-color: #d1d1d1;
+    background-color: var(--gray-dark);
 }
 .content-about p{
+  color: var(--white-text);
   padding: 2rem;
   font-size: 20px;
 }
 .dark-mode .content-about{
-  background-color: var(--dark);
+  background-color: var(--white);
 }
-.dark-mode .content-about p{
-  color: var(--white);
+.dark-mode .content-about h1 {
+  color: var(--dark);
+}
+.dark-mode .content-about p {
+  color: var(--dark);
 }
 .content-projects{
   padding: 40px 10%;
-  background-color: #d1d1d1;
+  background-color: var(--gray-dark);
 }
 .content-projects h1, p{
   color: var(--dark);
@@ -246,7 +264,7 @@ button:hover {
 }
 .container-card .card button{
   padding: 10px 40px;
-  background-color: white;
+  background-color: var(--white-text);
   border: 0;
   border-radius: 20px;
   color: black;
@@ -256,16 +274,16 @@ button:hover {
   transition: .5s;
 }
 .container-card div.card1{
-  background-image: linear-gradient(45deg, #E3BB16, #333);
+  background-image: linear-gradient(45deg, var(--dark), var(--gray));
 }
 .container-card div.card2{
-  background-image: linear-gradient(45deg, #333, #E3BB16);
+  background-image: linear-gradient(45deg, var(--gray), var(--dark));
 }
 .container-card div.card3{
-  background-image: linear-gradient(45deg, #E3BB16, #333);
+  background-image: linear-gradient(45deg, var(--dark), var(--gray));
 }
 .container-card div.card4{
-  background-image: linear-gradient(45deg, #333, #E3BB16);
+  background-image: linear-gradient(45deg, var(--gray), var(--dark));
 }
 .content-contact{
     padding: 200px 20%;
@@ -273,7 +291,7 @@ button:hover {
 }
 footer {
     padding: 20px;
-    background: #333;
+    background: var(--blue-dark);
     color: white;
     text-align: center;
 }
@@ -285,7 +303,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--blue-bottom);
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -302,12 +320,12 @@ footer {
   color: var(--white);
 }
 .social-icon:hover {
-    color: #ffcc00;
+    color: var(--blue-bottom);
 }
 .carousel-wrapper {
   width: 100%;
   overflow: hidden;
-  background: #d1d1d1;
+  background: var(--gray-dark);
   padding: 20px 0;
 }
 
@@ -329,7 +347,7 @@ footer {
 
 .carousel-track i {
   font-size: 50px;
-  color: black;
+  color: var(--white);
   transition: transform 0.3s ease;
 }
 
@@ -338,6 +356,9 @@ footer {
 }
 .dark-mode .carousel-wrapper{
   background-color: var(--white);
+}
+.dark-mode .carousel-wrapper i{
+  color: var(--dark);
 }
 
 @keyframes scrollIcons {
@@ -364,7 +385,7 @@ footer {
   border: none;
   font-size: 1.8em;
   cursor: pointer;
-  color: #ffcc00;
+  color: var(--white);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -379,7 +400,7 @@ footer {
 }
 /* Cabeçalho */
 .dark-mode header {
-  background: #333;
+  background: var(--blue-bottom);
 }  
 .dark-mode .pulsar{
   color: var(--white);
@@ -393,10 +414,18 @@ footer {
   color: white;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
-
+.dark-mode .hero>h1{
+  color: var(--dark);
+}
+.dark-mode h1 span{
+  color: var(--dark);
+}
+.dark-mode .nav a:hover{
+  color: var(--blue-bottom);
+}
 /* Seção Hero */
 .dark-mode .hero{
-  background: var(--white);
+  background: var(--brown);
   color: var(--dark);
 }
 .dark-mode .hero p{
@@ -404,7 +433,7 @@ footer {
 }
 /* Botão no modo escuro */
 .dark-mode button {
-  background: #e6b800;
+  background: var(--blue-bottom);
   color: var(--white);
 }
 
@@ -414,15 +443,16 @@ footer {
 
 /* Links no modo escuro */
 .dark-mode a {
-  color: #000000;
+  color: var(--dark);
 }
 /* Footer */
 .dark-mode footer {
-  background: #222;
+  background: var(--blue-bottom);
   color: white;
 }
 /* Social Bar */
-.dark-mode .social-bar {
+.dark-mode .social-bar .a{
+  color: var(--blue-bottom);
   background: rgba(50, 50, 50, 0.9);
 }
 /* Ícone do tema no modo escuro */
@@ -463,6 +493,7 @@ footer {
 /* Ajuste da seção hero */
 @media (max-width: 768px) {
   .hero h1 {
+    align-items: center;
       font-size: 2em;
   }
 
